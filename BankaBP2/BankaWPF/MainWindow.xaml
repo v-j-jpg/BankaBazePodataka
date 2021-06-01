@@ -7,12 +7,7 @@
         mc:Ignorable="d"
         Title="Banka" Height="450" Width="800">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="35,35,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <TextBlock x:Name="Ispis" HorizontalAlignment="Left" Margin="35,95,0,0" Text="sss" TextWrapping="Wrap" VerticalAlignment="Top" Height="270" Width="105"/>
-        <DockPanel HorizontalAlignment="Left" Height="25" LastChildFill="False" VerticalAlignment="Top" Width="792">
-            <Button x:Name="Banka" Content="Banka" Width="105" Click="Banka_Click"></Button>
-            <Button x:Name="Filijala" Content="Filijala" Width="95"></Button>
-            <Button x:Name="Sluzbenik" Content="Sluzbenik" Width="90"></Button>
-        </DockPanel>
+        <Button x:Name="btnBanka" Content="Banka" Click="btnBanka_Click" Width="100" Height="100"></Button>
     </Grid>
 </Window>
+

@@ -9,3 +9,15 @@ C:\Users\Lenovo\source\repos\BankaBP2\BankaBP2\obj\Debug\BankaBP2.csproj.CoreCom
 C:\Users\Lenovo\source\repos\BankaBP2\BankaBP2\obj\Debug\BankaBP2.csproj.CopyComplete
 C:\Users\Lenovo\source\repos\BankaBP2\BankaBP2\obj\Debug\BankaBP2.dll
 C:\Users\Lenovo\source\repos\BankaBP2\BankaBP2\obj\Debug\BankaBP2.pdb
+X:\BankaBazaPodataka\BankaBP2\BankaBP2\bin\Debug\BankaBP2.dll.config
+X:\BankaBazaPodataka\BankaBP2\BankaBP2\bin\Debug\BankaBP2.dll
+X:\BankaBazaPodataka\BankaBP2\BankaBP2\bin\Debug\BankaBP2.pdb
+X:\BankaBazaPodataka\BankaBP2\BankaBP2\bin\Debug\EntityFramework.dll
+X:\BankaBazaPodataka\BankaBP2\BankaBP2\bin\Debug\EntityFramework.SqlServer.dll
+X:\BankaBazaPodataka\BankaBP2\BankaBP2\bin\Debug\EntityFramework.xml
+X:\BankaBazaPodataka\BankaBP2\BankaBP2\bin\Debug\EntityFramework.SqlServer.xml
+X:\BankaBazaPodataka\BankaBP2\BankaBP2\obj\Debug\BankaBP2.csprojAssemblyReference.cache
+X:\BankaBazaPodataka\BankaBP2\BankaBP2\obj\Debug\BankaBP2.csproj.CoreCompileInputs.cache
+X:\BankaBazaPodataka\BankaBP2\BankaBP2\obj\Debug\BankaBP2.csproj.CopyComplete
+X:\BankaBazaPodataka\BankaBP2\BankaBP2\obj\Debug\BankaBP2.dll
+X:\BankaBazaPodataka\BankaBP2\BankaBP2\obj\Debug\BankaBP2.pdb

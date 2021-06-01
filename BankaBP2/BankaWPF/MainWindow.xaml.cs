@@ -1,5 +1,6 @@
 ﻿using BankaBP2;
 using BankaBP2.CRUD;
+using BankaWPF.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,20 +26,14 @@ namespace BankaWPF
         public MainWindow()
         {
             InitializeComponent();
+         
+          
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnBanka_Click(object sender, RoutedEventArgs e)
         {
-
-    
-
-           
-        }
-
-        private void Banka_Click(object sender, RoutedEventArgs e)
-        {
-            BankaWindow bankaWindow = new BankaWindow();
-            bankaWindow.ShowDialog();
+            BankaWindow win = new BankaWindow();
+            win.ShowDialog();
         }
     }
 }

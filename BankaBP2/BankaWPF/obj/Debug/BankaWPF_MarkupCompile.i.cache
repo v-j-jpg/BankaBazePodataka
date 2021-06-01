@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Lenovo\source\repos\BankaBP2\BankaWPF\obj\Debug\
+X:\BankaBazaPodataka\BankaBP2\BankaWPF\obj\Debug\
 BankaWPF
 none
 false
 DEBUG;TRACE
-C:\Users\Lenovo\source\repos\BankaBP2\BankaWPF\App.xaml
-2-1597211536
+X:\BankaBazaPodataka\BankaBP2\BankaWPF\App.xaml
+2-43861106
 
-7-1478976033
-17-1168448593
-BankaWindow.xaml;MainWindow.xaml;
+9-1095316880
+17306070021
+View\BankaWindow.xaml;MainWindow.xaml;
 
-True
+False
 

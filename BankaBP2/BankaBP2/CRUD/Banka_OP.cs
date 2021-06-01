@@ -46,16 +46,16 @@ namespace BankaBP2.CRUD
             return list;
         } 
         //Update
-        public void UpdateBank(string ime)
+        public void UpdateBank(string ime,int ID)
         {
 
             using (var db = new Model1Container())
             {
-                var banka = db.Bankas.SingleOrDefault(n => n.Naziv == ime);
+                var banka = db.Bankas.SingleOrDefault(n => n.ID_Banka == ID);
                
                 if (banka!=null)
                 {
-                    banka.Naziv = "NovaBanka";
+                    banka.Naziv = ime;
                     db.SaveChanges();
                 }
                
