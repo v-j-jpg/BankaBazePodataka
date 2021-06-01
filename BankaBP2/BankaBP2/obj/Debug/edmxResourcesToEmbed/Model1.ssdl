@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bankas">
+    <Key>
+      <PropertyRef Name="ID_Banka" />
+    </Key>
+    <Property Name="ID_Banka" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naziv" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Filijalas">
+    <Key>
+      <PropertyRef Name="ID_FIL" />
+      <PropertyRef Name="BankaID_Banka" />
+    </Key>
+    <Property Name="ID_FIL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ADR_FIL" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BankaID_Banka" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Gazdnistvoes">
+    <Key>
+      <PropertyRef Name="ID_POS" />
+    </Key>
+    <Property Name="ID_POS" Type="int" Nullable="false" />
+    <Property Name="POV" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NETO_POS" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Agro_ID_ZAHT" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IzdatiKreditis">
+    <Key>
+      <PropertyRef Name="KlijentJMBG_KLI" />
+      <PropertyRef Name="SluzbenikJMBG_RAD" />
+      <PropertyRef Name="OdobrenjeRISKID_KOMISIJE" />
+      <PropertyRef Name="OdobrenjeOdlukaID_ODLUKE" />
+    </Key>
+    <Property Name="KlijentJMBG_KLI" Type="int" Nullable="false" />
+    <Property Name="SluzbenikJMBG_RAD" Type="int" Nullable="false" />
+    <Property Name="OdobrenjeRISKID_KOMISIJE" Type="int" Nullable="false" />
+    <Property Name="OdobrenjeOdlukaID_ODLUKE" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Jemacs">
+    <Key>
+      <PropertyRef Name="JMBG_JEM" />
+    </Key>
+    <Property Name="JMBG_JEM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IME_JEM" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PRZ_JEM" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PLT_JEM" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Kes_kredit_ID_ZAHT" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Klijents">
+    <Key>
+      <PropertyRef Name="JMBG_KLI" />
+    </Key>
+    <Property Name="JMBG_KLI" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IME_KLI" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PRZ_KLI" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ZirantID_ZIR" Type="int" Nullable="false" />
+    <Property Name="PLT_KLI" Type="int" />
+  </EntityType>
+  <EntityType Name="Kompanijas">
+    <Key>
+      <PropertyRef Name="ID_KOMP" />
+    </Key>
+    <Property Name="ID_KOMP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NETO_KOMP" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Bizni_ID_ZAHT" Type="int" Nullable="false" />
+    <Property Name="NAZ_KOMP" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Kredits">
+    <Key>
+      <PropertyRef Name="ID_ZAHT" />
+    </Key>
+    <Property Name="ID_ZAHT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VAL" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="KOL_SRD" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DAT_IZD" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IzdatiKreditiKlijentJMBG_KLI" Type="int" Nullable="false" />
+    <Property Name="IzdatiKreditiSluzbenikJMBG_RAD" Type="int" Nullable="false" />
+    <Property Name="IzdatiKreditiOdobrenjeRISKID_KOMISIJE" Type="int" Nullable="false" />
+    <Property Name="IzdatiKreditiOdobrenjeOdlukaID_ODLUKE" Type="int" Nullable="false" />
+    <Property Name="tipKredita" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kredits_Agro">
+    <Key>
+      <PropertyRef Name="ID_ZAHT" />
+    </Key>
+    <Property Name="ID_ZAHT" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kredits_Biznis">
+    <Key>
+      <PropertyRef Name="ID_ZAHT" />
+    </Key>
+    <Property Name="ID_ZAHT" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kredits_Kes_kredit">
+    <Key>
+      <PropertyRef Name="ID_ZAHT" />
+    </Key>
+    <Property Name="ID_ZAHT" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Odlukas">
+    <Key>
+      <PropertyRef Name="ID_ODLUKE" />
+    </Key>
+    <Property Name="ID_ODLUKE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Odobreno" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DAT_ODLUKE" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Odobrenjes">
+    <Key>
+      <PropertyRef Name="RISKID_KOMISIJE" />
+      <PropertyRef Name="OdlukaID_ODLUKE" />
+    </Key>
+    <Property Name="RISKID_KOMISIJE" Type="int" Nullable="false" />
+    <Property Name="OdlukaID_ODLUKE" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RISKs">
+    <Key>
+      <PropertyRef Name="ID_KOMISIJE" />
+    </Key>
+    <Property Name="ID_KOMISIJE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BR_CLANOVA" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sluzbeniks">
+    <Key>
+      <PropertyRef Name="JMBG_RAD" />
+    </Key>
+    <Property Name="JMBG_RAD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IME_RAD" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PRZ_RAD" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Filijala_ID_FIL" Type="int" Nullable="false" />
+    <Property Name="Filijala_BankaID_Banka" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Zirants">
+    <Key>
+      <PropertyRef Name="ID_ZIR" />
+    </Key>
+    <Property Name="ID_ZIR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IME_ZIR" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PRZ_ZIR" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PLT_ZIR" Type="int" />
+  </EntityType>
+  <Association Name="FK_Agro_inherits_Kredit">
+    <End Role="Kredits" Type="Self.Kredits" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Kredits_Agro" Type="Self.Kredits_Agro" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Kredits">
+        <PropertyRef Name="ID_ZAHT" />
+      </Principal>
+      <Dependent Role="Kredits_Agro">
+        <PropertyRef Name="ID_ZAHT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AgroGazdnistvo">
+    <End Role="Kredits_Agro" Type="Self.Kredits_Agro" Multiplicity="1" />
+    <End Role="Gazdnistvoes" Type="Self.Gazdnistvoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kredits_Agro">
+        <PropertyRef Name="ID_ZAHT" />
+      </Principal>
+      <Dependent Role="Gazdnistvoes">
+        <PropertyRef Name="Agro_ID_ZAHT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BankaFilijala">
+    <End Role="Bankas" Type="Self.Bankas" Multiplicity="1" />
+    <End Role="Filijalas" Type="Self.Filijalas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bankas">
+        <PropertyRef Name="ID_Banka" />
+      </Principal>
+      <Dependent Role="Filijalas">
+        <PropertyRef Name="BankaID_Banka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Biznis_inherits_Kredit">
+    <End Role="Kredits" Type="Self.Kredits" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Kredits_Biznis" Type="Self.Kredits_Biznis" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Kredits">
+        <PropertyRef Name="ID_ZAHT" />
+      </Principal>
+      <Dependent Role="Kredits_Biznis">
+        <PropertyRef Name="ID_ZAHT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BiznisKompanija">
+    <End Role="Kredits_Biznis" Type="Self.Kredits_Biznis" Multiplicity="1" />
+    <End Role="Kompanijas" Type="Self.Kompanijas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kredits_Biznis">
+        <PropertyRef Name="ID_ZAHT" />
+      </Principal>
+      <Dependent Role="Kompanijas">
+        <PropertyRef Name="Bizni_ID_ZAHT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FilijalaSluzbenik">
+    <End Role="Filijalas" Type="Self.Filijalas" Multiplicity="1" />
+    <End Role="Sluzbeniks" Type="Self.Sluzbeniks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Filijalas">
+        <PropertyRef Name="ID_FIL" />
+        <PropertyRef Name="BankaID_Banka" />
+      </Principal>
+      <Dependent Role="Sluzbeniks">
+        <PropertyRef Name="Filijala_ID_FIL" />
+        <PropertyRef Name="Filijala_BankaID_Banka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IzdatiKreditiKlijent">
+    <End Role="Klijents" Type="Self.Klijents" Multiplicity="1" />
+    <End Role="IzdatiKreditis" Type="Self.IzdatiKreditis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klijents">
+        <PropertyRef Name="JMBG_KLI" />
+      </Principal>
+      <Dependent Role="IzdatiKreditis">
+        <PropertyRef Name="KlijentJMBG_KLI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IzdatiKreditiKredit">
+    <End Role="IzdatiKreditis" Type="Self.IzdatiKreditis" Multiplicity="1" />
+    <End Role="Kredits" Type="Self.Kredits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IzdatiKreditis">
+        <PropertyRef Name="KlijentJMBG_KLI" />
+        <PropertyRef Name="SluzbenikJMBG_RAD" />
+        <PropertyRef Name="OdobrenjeRISKID_KOMISIJE" />
+        <PropertyRef Name="OdobrenjeOdlukaID_ODLUKE" />
+      </Principal>
+      <Dependent Role="Kredits">
+        <PropertyRef Name="IzdatiKreditiKlijentJMBG_KLI" />
+        <PropertyRef Name="IzdatiKreditiSluzbenikJMBG_RAD" />
+        <PropertyRef Name="IzdatiKreditiOdobrenjeRISKID_KOMISIJE" />
+        <PropertyRef Name="IzdatiKreditiOdobrenjeOdlukaID_ODLUKE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kes_kredit_inherits_Kredit">
+    <End Role="Kredits" Type="Self.Kredits" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Kredits_Kes_kredit" Type="Self.Kredits_Kes_kredit" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Kredits">
+        <PropertyRef Name="ID_ZAHT" />
+      </Principal>
+      <Dependent Role="Kredits_Kes_kredit">
+        <PropertyRef Name="ID_ZAHT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kes_kreditJemac">
+    <End Role="Kredits_Kes_kredit" Type="Self.Kredits_Kes_kredit" Multiplicity="1" />
+    <End Role="Jemacs" Type="Self.Jemacs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kredits_Kes_kredit">
+        <PropertyRef Name="ID_ZAHT" />
+      </Principal>
+      <Dependent Role="Jemacs">
+        <PropertyRef Name="Kes_kredit_ID_ZAHT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OdlukaOdobrenje">
+    <End Role="Odlukas" Type="Self.Odlukas" Multiplicity="1" />
+    <End Role="Odobrenjes" Type="Self.Odobrenjes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Odlukas">
+        <PropertyRef Name="ID_ODLUKE" />
+      </Principal>
+      <Dependent Role="Odobrenjes">
+        <PropertyRef Name="OdlukaID_ODLUKE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OdobrenjeIzdatiKrediti">
+    <End Role="Odobrenjes" Type="Self.Odobrenjes" Multiplicity="1" />
+    <End Role="IzdatiKreditis" Type="Self.IzdatiKreditis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Odobrenjes">
+        <PropertyRef Name="RISKID_KOMISIJE" />
+        <PropertyRef Name="OdlukaID_ODLUKE" />
+      </Principal>
+      <Dependent Role="IzdatiKreditis">
+        <PropertyRef Name="OdobrenjeRISKID_KOMISIJE" />
+        <PropertyRef Name="OdobrenjeOdlukaID_ODLUKE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RISKOdobrenje">
+    <End Role="RISKs" Type="Self.RISKs" Multiplicity="1" />
+    <End Role="Odobrenjes" Type="Self.Odobrenjes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RISKs">
+        <PropertyRef Name="ID_KOMISIJE" />
+      </Principal>
+      <Dependent Role="Odobrenjes">
+        <PropertyRef Name="RISKID_KOMISIJE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SluzbenikIzdatiKrediti">
+    <End Role="Sluzbeniks" Type="Self.Sluzbeniks" Multiplicity="1" />
+    <End Role="IzdatiKreditis" Type="Self.IzdatiKreditis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sluzbeniks">
+        <PropertyRef Name="JMBG_RAD" />
+      </Principal>
+      <Dependent Role="IzdatiKreditis">
+        <PropertyRef Name="SluzbenikJMBG_RAD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ZirantKlijent">
+    <End Role="Zirants" Type="Self.Zirants" Multiplicity="1" />
+    <End Role="Klijents" Type="Self.Klijents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zirants">
+        <PropertyRef Name="ID_ZIR" />
+      </Principal>
+      <Dependent Role="Klijents">
+        <PropertyRef Name="ZirantID_ZIR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="Bankas" EntityType="Self.Bankas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Filijalas" EntityType="Self.Filijalas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gazdnistvoes" EntityType="Self.Gazdnistvoes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IzdatiKreditis" EntityType="Self.IzdatiKreditis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Jemacs" EntityType="Self.Jemacs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Klijents" EntityType="Self.Klijents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kompanijas" EntityType="Self.Kompanijas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kredits" EntityType="Self.Kredits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kredits_Agro" EntityType="Self.Kredits_Agro" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kredits_Biznis" EntityType="Self.Kredits_Biznis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kredits_Kes_kredit" EntityType="Self.Kredits_Kes_kredit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Odlukas" EntityType="Self.Odlukas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Odobrenjes" EntityType="Self.Odobrenjes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RISKs" EntityType="Self.RISKs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sluzbeniks" EntityType="Self.Sluzbeniks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Zirants" EntityType="Self.Zirants" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Agro_inherits_Kredit" Association="Self.FK_Agro_inherits_Kredit">
+      <End Role="Kredits" EntitySet="Kredits" />
+      <End Role="Kredits_Agro" EntitySet="Kredits_Agro" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AgroGazdnistvo" Association="Self.FK_AgroGazdnistvo">
+      <End Role="Kredits_Agro" EntitySet="Kredits_Agro" />
+      <End Role="Gazdnistvoes" EntitySet="Gazdnistvoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BankaFilijala" Association="Self.FK_BankaFilijala">
+      <End Role="Bankas" EntitySet="Bankas" />
+      <End Role="Filijalas" EntitySet="Filijalas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Biznis_inherits_Kredit" Association="Self.FK_Biznis_inherits_Kredit">
+      <End Role="Kredits" EntitySet="Kredits" />
+      <End Role="Kredits_Biznis" EntitySet="Kredits_Biznis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BiznisKompanija" Association="Self.FK_BiznisKompanija">
+      <End Role="Kredits_Biznis" EntitySet="Kredits_Biznis" />
+      <End Role="Kompanijas" EntitySet="Kompanijas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FilijalaSluzbenik" Association="Self.FK_FilijalaSluzbenik">
+      <End Role="Filijalas" EntitySet="Filijalas" />
+      <End Role="Sluzbeniks" EntitySet="Sluzbeniks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IzdatiKreditiKlijent" Association="Self.FK_IzdatiKreditiKlijent">
+      <End Role="Klijents" EntitySet="Klijents" />
+      <End Role="IzdatiKreditis" EntitySet="IzdatiKreditis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IzdatiKreditiKredit" Association="Self.FK_IzdatiKreditiKredit">
+      <End Role="IzdatiKreditis" EntitySet="IzdatiKreditis" />
+      <End Role="Kredits" EntitySet="Kredits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kes_kredit_inherits_Kredit" Association="Self.FK_Kes_kredit_inherits_Kredit">
+      <End Role="Kredits" EntitySet="Kredits" />
+      <End Role="Kredits_Kes_kredit" EntitySet="Kredits_Kes_kredit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kes_kreditJemac" Association="Self.FK_Kes_kreditJemac">
+      <End Role="Kredits_Kes_kredit" EntitySet="Kredits_Kes_kredit" />
+      <End Role="Jemacs" EntitySet="Jemacs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OdlukaOdobrenje" Association="Self.FK_OdlukaOdobrenje">
+      <End Role="Odlukas" EntitySet="Odlukas" />
+      <End Role="Odobrenjes" EntitySet="Odobrenjes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OdobrenjeIzdatiKrediti" Association="Self.FK_OdobrenjeIzdatiKrediti">
+      <End Role="Odobrenjes" EntitySet="Odobrenjes" />
+      <End Role="IzdatiKreditis" EntitySet="IzdatiKreditis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RISKOdobrenje" Association="Self.FK_RISKOdobrenje">
+      <End Role="RISKs" EntitySet="RISKs" />
+      <End Role="Odobrenjes" EntitySet="Odobrenjes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SluzbenikIzdatiKrediti" Association="Self.FK_SluzbenikIzdatiKrediti">
+      <End Role="Sluzbeniks" EntitySet="Sluzbeniks" />
+      <End Role="IzdatiKreditis" EntitySet="IzdatiKreditis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ZirantKlijent" Association="Self.FK_ZirantKlijent">
+      <End Role="Zirants" EntitySet="Zirants" />
+      <End Role="Klijents" EntitySet="Klijents" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

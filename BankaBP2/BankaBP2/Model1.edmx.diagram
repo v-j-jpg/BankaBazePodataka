@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d4275c00378947f18e9da9f3c06b861f" Name="Diagram1" ZoomLevel="74" >
+        <EntityTypeShape EntityType="Model1.Banka" Width="1.5" PointX="5.375" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.Filijala" Width="1.5" PointX="5.375" PointY="2.625" />
+        <AssociationConnector Association="Model1.BankaFilijala" />
+        <EntityTypeShape EntityType="Model1.Sluzbenik" Width="1.5" PointX="5.25" PointY="5.5" />
+        <AssociationConnector Association="Model1.FilijalaSluzbenik" />
+        <EntityTypeShape EntityType="Model1.Kredit" Width="3.5" PointX="4.375" PointY="11.625" />
+        <EntityTypeShape EntityType="Model1.Klijent" Width="1.5" PointX="10.25" PointY="8" />
+        <EntityTypeShape EntityType="Model1.IzdatiKrediti" Width="1.5" PointX="5.25" PointY="8.125" />
+        <AssociationConnector Association="Model1.IzdatiKreditiKlijent" />
+        <AssociationConnector Association="Model1.SluzbenikIzdatiKrediti" />
+        <EntityTypeShape EntityType="Model1.RISK" Width="1.5" PointX="0.5" PointY="6" />
+        <EntityTypeShape EntityType="Model1.Odluka" Width="1.5" PointX="0.5" PointY="11" />
+        <EntityTypeShape EntityType="Model1.Odobrenje" Width="1.5" PointX="0.5" PointY="8.125" />
+        <AssociationConnector Association="Model1.RISKOdobrenje" />
+        <AssociationConnector Association="Model1.OdlukaOdobrenje" />
+        <AssociationConnector Association="Model1.OdobrenjeIzdatiKrediti" />
+        <AssociationConnector Association="Model1.IzdatiKreditiKredit" />
+        <EntityTypeShape EntityType="Model1.Zirant" Width="1.75" PointX="14.5" PointY="8" />
+        <EntityTypeShape EntityType="Model1.Kes_kredit" Width="1.5" PointX="2.375" PointY="15.5" />
+        <EntityTypeShape EntityType="Model1.Agro" Width="1.5" PointX="5.375" PointY="15.5" />
+        <EntityTypeShape EntityType="Model1.Biznis" Width="1.5" PointX="8.125" PointY="15.5" />
+        <EntityTypeShape EntityType="Model1.Gazdnistvo" Width="1.5" PointX="5.375" PointY="17.625" />
+        <EntityTypeShape EntityType="Model1.Kompanija" Width="1.5" PointX="8.25" PointY="17.625" />
+        <EntityTypeShape EntityType="Model1.Jemac" Width="1.5" PointX="2.375" PointY="17.625" />
+        <InheritanceConnector EntityType="Model1.Agro" />
+        <InheritanceConnector EntityType="Model1.Biznis" />
+        <InheritanceConnector EntityType="Model1.Kes_kredit" />
+        <AssociationConnector Association="Model1.AgroGazdnistvo" />
+        <AssociationConnector Association="Model1.BiznisKompanija" />
+        <AssociationConnector Association="Model1.Kes_kreditJemac" />
+        <AssociationConnector Association="Model1.ZirantKlijent" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

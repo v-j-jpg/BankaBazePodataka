@@ -1,0 +1,18 @@
+﻿<Window x:Class="BankaWPF.BankaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BankaWPF"
+        mc:Ignorable="d"
+        Title="BankaWindow" Height="450" Width="800">
+    <Grid>
+        <TextBlock x:Name="Ispis" HorizontalAlignment="Left" Margin="40,80,0,0" TextWrapping="Wrap" Text="Banke" VerticalAlignment="Top" Height="220" Width="215"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="500,195,0,0" VerticalAlignment="Top" Width="171" Height="30"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="440,80,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="551,82,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="440,124,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="551,126,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>

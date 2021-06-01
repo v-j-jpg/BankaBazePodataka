@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="Bankas">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Banka)">
+        <MappingFragment StoreEntitySet="Bankas">
+          <ScalarProperty Name="ID_Banka" ColumnName="ID_Banka" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Filijalas">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Filijala)">
+        <MappingFragment StoreEntitySet="Filijalas">
+          <ScalarProperty Name="ID_FIL" ColumnName="ID_FIL" />
+          <ScalarProperty Name="BankaID_Banka" ColumnName="BankaID_Banka" />
+          <ScalarProperty Name="ADR_FIL" ColumnName="ADR_FIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sluzbeniks">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Sluzbenik)">
+        <MappingFragment StoreEntitySet="Sluzbeniks">
+          <ScalarProperty Name="JMBG_RAD" ColumnName="JMBG_RAD" />
+          <ScalarProperty Name="IME_RAD" ColumnName="IME_RAD" />
+          <ScalarProperty Name="PRZ_RAD" ColumnName="PRZ_RAD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Klijents">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Klijent)">
+        <MappingFragment StoreEntitySet="Klijents">
+          <ScalarProperty Name="JMBG_KLI" ColumnName="JMBG_KLI" />
+          <ScalarProperty Name="IME_KLI" ColumnName="IME_KLI" />
+          <ScalarProperty Name="PRZ_KLI" ColumnName="PRZ_KLI" />
+          <ScalarProperty Name="ZirantID_ZIR" ColumnName="ZirantID_ZIR" />
+          <ScalarProperty Name="PLT_KLI" ColumnName="PLT_KLI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IzdatiKreditis">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.IzdatiKrediti)">
+        <MappingFragment StoreEntitySet="IzdatiKreditis">
+          <ScalarProperty Name="KlijentJMBG_KLI" ColumnName="KlijentJMBG_KLI" />
+          <ScalarProperty Name="SluzbenikJMBG_RAD" ColumnName="SluzbenikJMBG_RAD" />
+          <ScalarProperty Name="OdobrenjeRISKID_KOMISIJE" ColumnName="OdobrenjeRISKID_KOMISIJE" />
+          <ScalarProperty Name="OdobrenjeOdlukaID_ODLUKE" ColumnName="OdobrenjeOdlukaID_ODLUKE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RISKs">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.RISK)">
+        <MappingFragment StoreEntitySet="RISKs">
+          <ScalarProperty Name="ID_KOMISIJE" ColumnName="ID_KOMISIJE" />
+          <ScalarProperty Name="BR_CLANOVA" ColumnName="BR_CLANOVA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Odlukas">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Odluka)">
+        <MappingFragment StoreEntitySet="Odlukas">
+          <ScalarProperty Name="ID_ODLUKE" ColumnName="ID_ODLUKE" />
+          <ScalarProperty Name="Odobreno" ColumnName="Odobreno" />
+          <ScalarProperty Name="DAT_ODLUKE" ColumnName="DAT_ODLUKE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Odobrenjes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Odobrenje)">
+        <MappingFragment StoreEntitySet="Odobrenjes">
+          <ScalarProperty Name="RISKID_KOMISIJE" ColumnName="RISKID_KOMISIJE" />
+          <ScalarProperty Name="OdlukaID_ODLUKE" ColumnName="OdlukaID_ODLUKE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zirants">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Zirant)">
+        <MappingFragment StoreEntitySet="Zirants">
+          <ScalarProperty Name="ID_ZIR" ColumnName="ID_ZIR" />
+          <ScalarProperty Name="IME_ZIR" ColumnName="IME_ZIR" />
+          <ScalarProperty Name="PRZ_ZIR" ColumnName="PRZ_ZIR" />
+          <ScalarProperty Name="PLT_ZIR" ColumnName="PLT_ZIR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gazdnistvoes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Gazdnistvo)">
+        <MappingFragment StoreEntitySet="Gazdnistvoes">
+          <ScalarProperty Name="ID_POS" ColumnName="ID_POS" />
+          <ScalarProperty Name="POV" ColumnName="POV" />
+          <ScalarProperty Name="NETO_POS" ColumnName="NETO_POS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kompanijas">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Kompanija)">
+        <MappingFragment StoreEntitySet="Kompanijas">
+          <ScalarProperty Name="ID_KOMP" ColumnName="ID_KOMP" />
+          <ScalarProperty Name="NETO_KOMP" ColumnName="NETO_KOMP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jemacs">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Jemac)">
+        <MappingFragment StoreEntitySet="Jemacs">
+          <ScalarProperty Name="JMBG_JEM" ColumnName="JMBG_JEM" />
+          <ScalarProperty Name="IME_JEM" ColumnName="IME_JEM" />
+          <ScalarProperty Name="PRZ_JEM" ColumnName="PRZ_JEM" />
+          <ScalarProperty Name="PLT_JEM" ColumnName="PLT_JEM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kredits">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Kredit)">
+        <MappingFragment StoreEntitySet="Kredits">
+          <ScalarProperty Name="ID_ZAHT" ColumnName="ID_ZAHT" />
+          <ScalarProperty Name="VAL" ColumnName="VAL" />
+          <ScalarProperty Name="KOL_SRD" ColumnName="KOL_SRD" />
+          <ScalarProperty Name="DAT_IZD" ColumnName="DAT_IZD" />
+          <ScalarProperty Name="IzdatiKreditiKlijentJMBG_KLI" ColumnName="IzdatiKreditiKlijentJMBG_KLI" />
+          <ScalarProperty Name="IzdatiKreditiSluzbenikJMBG_RAD" ColumnName="IzdatiKreditiSluzbenikJMBG_RAD" />
+          <ScalarProperty Name="IzdatiKreditiOdobrenjeRISKID_KOMISIJE" ColumnName="IzdatiKreditiOdobrenjeRISKID_KOMISIJE" />
+          <ScalarProperty Name="IzdatiKreditiOdobrenjeOdlukaID_ODLUKE" ColumnName="IzdatiKreditiOdobrenjeOdlukaID_ODLUKE" />
+          <ScalarProperty Name="tipKredita" ColumnName="tipKredita" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Agro)">
+        <MappingFragment StoreEntitySet="Kredits_Agro">
+          <ScalarProperty Name="ID_ZAHT" ColumnName="ID_ZAHT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Biznis)">
+        <MappingFragment StoreEntitySet="Kredits_Biznis">
+          <ScalarProperty Name="ID_ZAHT" ColumnName="ID_ZAHT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Kes_kredit)">
+        <MappingFragment StoreEntitySet="Kredits_Kes_kredit">
+          <ScalarProperty Name="ID_ZAHT" ColumnName="ID_ZAHT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FilijalaSluzbenik" TypeName="Model1.FilijalaSluzbenik" StoreEntitySet="Sluzbeniks">
+      <EndProperty Name="Filijala">
+        <ScalarProperty Name="ID_FIL" ColumnName="Filijala_ID_FIL" />
+        <ScalarProperty Name="BankaID_Banka" ColumnName="Filijala_BankaID_Banka" />
+      </EndProperty>
+      <EndProperty Name="Sluzbenik">
+        <ScalarProperty Name="JMBG_RAD" ColumnName="JMBG_RAD" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AgroGazdnistvo" TypeName="Model1.AgroGazdnistvo" StoreEntitySet="Gazdnistvoes">
+      <EndProperty Name="Agro">
+        <ScalarProperty Name="ID_ZAHT" ColumnName="Agro_ID_ZAHT" />
+      </EndProperty>
+      <EndProperty Name="Gazdnistvo">
+        <ScalarProperty Name="ID_POS" ColumnName="ID_POS" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="BiznisKompanija" TypeName="Model1.BiznisKompanija" StoreEntitySet="Kompanijas">
+      <EndProperty Name="Biznis">
+        <ScalarProperty Name="ID_ZAHT" ColumnName="Bizni_ID_ZAHT" />
+      </EndProperty>
+      <EndProperty Name="Kompanija">
+        <ScalarProperty Name="ID_KOMP" ColumnName="ID_KOMP" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Kes_kreditJemac" TypeName="Model1.Kes_kreditJemac" StoreEntitySet="Jemacs">
+      <EndProperty Name="Kes_kredit">
+        <ScalarProperty Name="ID_ZAHT" ColumnName="Kes_kredit_ID_ZAHT" />
+      </EndProperty>
+      <EndProperty Name="Jemac">
+        <ScalarProperty Name="JMBG_JEM" ColumnName="JMBG_JEM" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
