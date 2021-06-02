@@ -12,6 +12,10 @@ namespace WPF.ViewModel
         private KlijentViewModel klijentViewModel = new KlijentViewModel();
         private HomeViewModel homeViewModel = new HomeViewModel();
         private BindableBase currentViewModel;
+        private ZirantViewModel zirantViewModel = new ZirantViewModel();
+        private SluzbenikViewModel sluzbenikViewModel = new SluzbenikViewModel();
+        private RiskViewModel riskViewModel = new RiskViewModel();
+        private OdlukaViewModel odlukaViewModel = new OdlukaViewModel();
 
         public KlijentiWindowViewModel()
         {
@@ -41,6 +45,22 @@ namespace WPF.ViewModel
 
                 case "klijent":
                     CurrentViewModel = klijentViewModel;
+                    break;
+
+                case "zirant":
+                    CurrentViewModel = zirantViewModel;
+                    break;
+
+                case "sluzbenik":
+                    CurrentViewModel = sluzbenikViewModel;
+                    break;
+
+                case "odluka":
+                    CurrentViewModel = odlukaViewModel;
+                    break;
+
+                case "risk":
+                    CurrentViewModel = riskViewModel;
                     break;
             }
 

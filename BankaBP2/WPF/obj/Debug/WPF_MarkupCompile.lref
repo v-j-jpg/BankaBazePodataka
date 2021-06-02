@@ -6,5 +6,8 @@ FX:\BankaBazaPodataka\BankaBP2\WPF\View\FilijalaWindow.xaml;;
 FX:\BankaBazaPodataka\BankaBP2\WPF\View\HomeView.xaml;;
 FX:\BankaBazaPodataka\BankaBP2\WPF\View\KlijentiWindow.xaml;;
 FX:\BankaBazaPodataka\BankaBP2\WPF\View\KlijentView.xaml;;
-FX:\BankaBazaPodataka\BankaBP2\WPF\View\Sluzbenik.xaml;;
+FX:\BankaBazaPodataka\BankaBP2\WPF\View\OdlukaView.xaml;;
+FX:\BankaBazaPodataka\BankaBP2\WPF\View\RiskView.xaml;;
+FX:\BankaBazaPodataka\BankaBP2\WPF\View\SluzbenikView.xaml;;
+FX:\BankaBazaPodataka\BankaBP2\WPF\View\ZirantView.xaml;;
 

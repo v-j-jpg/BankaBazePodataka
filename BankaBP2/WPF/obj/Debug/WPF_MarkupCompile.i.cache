@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 X:\BankaBazaPodataka\BankaBP2\WPF\App.xaml
-7635961109
+10-1231161162
 
-221788785913
+33-1325111735
 18520456757
-MainWindow.xaml;View\BankaWindow.xaml;View\FilijalaWindow.xaml;View\HomeView.xaml;View\KlijentiWindow.xaml;View\KlijentView.xaml;View\Sluzbenik.xaml;
+MainWindow.xaml;View\BankaWindow.xaml;View\FilijalaWindow.xaml;View\HomeView.xaml;View\KlijentiWindow.xaml;View\KlijentView.xaml;View\OdlukaView.xaml;View\RiskView.xaml;View\SluzbenikView.xaml;View\ZirantView.xaml;
 
 True
 

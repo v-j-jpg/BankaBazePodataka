@@ -15,6 +15,23 @@
         <DataTemplate DataType="{x:Type viewModel:KlijentViewModel}">
             <views:KlijentView/>
         </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+            <views:HomeView/>
+        </DataTemplate>
+    
+        <DataTemplate DataType="{x:Type viewModel:ZirantViewModel}">
+            <views:ZirantView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:SluzbenikViewModel}">
+            <views:SluzbenikView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:RiskViewModel}">
+                <views:Risk/>
+            </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:OdlukaViewModel}">
+            <views:OdlukaView/>
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -24,8 +41,19 @@
 
         <DockPanel Grid.Row="0" Margin="5">
             <Menu DockPanel.Dock="Top">
+             
+                <MenuItem Header="Home" Command="{Binding NavCommand}"
+                          CommandParameter="home"/>
                 <MenuItem Header="Lista klijenata" Command="{Binding NavCommand}"
                           CommandParameter="klijent"/>
+                <MenuItem Header="Lista ziranata" Command="{Binding NavCommand}"
+                          CommandParameter="zirant"/>
+                <MenuItem Header="Lista sluzbenika" Command="{Binding NavCommand}"
+                          CommandParameter="sluzbenik"/>
+                <MenuItem Header="Lista risk" Command="{Binding NavCommand}"
+                          CommandParameter="risk"/>
+                <MenuItem Header="Lista odluka" Command="{Binding NavCommand}"
+                          CommandParameter="odluka"/>
             </Menu>
         </DockPanel>
         <Grid Grid.Row="1">

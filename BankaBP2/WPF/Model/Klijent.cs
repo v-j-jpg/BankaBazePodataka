@@ -57,6 +57,7 @@ namespace WPF.Model
                 OnPropertyChanged("PLT_KLI");
                 }
         }
+
         private int zirantID_ZIR;
 
         public int ZirantID_ZIR

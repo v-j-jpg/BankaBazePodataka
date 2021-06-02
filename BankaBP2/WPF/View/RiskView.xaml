@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="WPF.View.Risk"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF.View"
+               xmlns:viewModel="clr-namespace:WPF.ViewModel"
+             xmlns:data="clr-namespace:WPF.Model"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type data:Risk }">
+            <StackPanel Orientation="Horizontal">
+                <TextBox IsReadOnly="True" Text="{Binding Path=ID_KOMISIJE, Mode=TwoWay}" Width="100"/>
+                <TextBox Text="{Binding Path=BR_CLANOVA, Mode=TwoWay}" Width="100"/>
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Button Content="Delete"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Width="75"
+                    Command="{Binding DeleteCommand}"/>
+
+            <ListBox ItemsSource="{Binding Klijenti}" SelectedItem="{Binding SelektovaniKlijent}"/>
+
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                 
+                    <Label>Br clanova komisije:</Label>
+                    <TextBox Text="{Binding LNText}" Width="70"/>
+                </StackPanel>
+
+
+                <Button Content="Add"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Width="75"
+                    Command="{Binding AddCommand}"/>
+
+                <Button Content="Update"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Width="75"
+                    Command="{Binding UpdateCommand}"/>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

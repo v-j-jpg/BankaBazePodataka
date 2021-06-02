@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="WPF.View.SluzbenikView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF.View"
+             xmlns:viewModel="clr-namespace:WPF.ViewModel"
+             xmlns:data="clr-namespace:WPF.Model"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type data:Sluzbenik }">
+            <StackPanel Orientation="Horizontal">
+                <TextBox Text="{Binding Path=IME_RAD, Mode=TwoWay}" Width="100"/>
+                <TextBox Text="{Binding Path=PRZ_RAD, Mode=TwoWay}" Width="100"/>
+                <TextBlock Text="{Binding Path=FilijalaID_FIL, Mode=OneWay}" Width="100"/>
+                <TextBlock Text="{Binding Path=FilijalaBankaID_Banka, Mode=OneWay}" Width="100"/>
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Button Content="Delete"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Width="75"
+                    Command="{Binding DeleteCommand}"/>
+
+            <ListBox ItemsSource="{Binding Klijenti}" SelectedItem="{Binding SelektovaniKlijent}"/>
+
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <Label>First Name:</Label>
+                    <TextBox Text="{Binding FNText}" Width="70"/>
+                    <Label>Last Name:</Label>
+                    <TextBox Text="{Binding LNText}" Width="70"/>
+                    <Label>Id Fil :</Label>
+                    <TextBox Text="{Binding PLTText}" Width="70"/>
+                    <Label>Id Bank :</Label>
+                    <TextBox Text="{Binding BankText}" Width="70"/>
+                </StackPanel>
+
+
+                <Button Content="Add"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Width="75"
+                    Command="{Binding AddCommand}"/>
+
+                <Button Content="Update"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Width="75"
+                    Command="{Binding UpdateCommand}"/>
+            </StackPanel>
+        </StackPanel>
+
+
+
+
+    </Grid>
+</UserControl>

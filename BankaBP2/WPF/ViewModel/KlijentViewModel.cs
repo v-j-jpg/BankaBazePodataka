@@ -39,10 +39,10 @@ namespace WPF.ViewModel
 
             foreach (var item in Klijenti)
             {
-                //if (item.IME_KLI==FNText || item.PRZ_KLI==LNText || item.ZirantID_ZIR==Int32.Parse(ZIRTEXT))
-                //{
-                //    Klijenti.Contains();
-                //}
+                if (SelektovaniKlijent.JMBG_KLI.Equals(item.JMBG_KLI))
+                {
+                    kliOP.UpdateKli(SelektovaniKlijent.IME_KLI, selektovaniKlijent.PRZ_KLI,selektovaniKlijent.ZirantID_ZIR, selektovaniKlijent.PLT_KLI,item.JMBG_KLI);
+                }
             }
           
 
@@ -55,6 +55,7 @@ namespace WPF.ViewModel
             {
                 selektovaniKlijent = value;
                 DeleteCommand.RaiseCanExecuteChanged();
+                UpdateCommand.RaiseCanExecuteChanged();
             }
         }
         Model.Klijent kli;
@@ -63,17 +64,22 @@ namespace WPF.ViewModel
         {
             ObservableCollection<Model.Klijent> klijenti = new ObservableCollection<Model.Klijent>();
 
-            
+            int v2;
 
             using (var db = new Model1Container())
             {
                 foreach (var item in db.Klijents)
                 {
+                    if (item.PLT_KLI == null)
+                        v2 = default(int);
+                    else
+                        v2 = item.PLT_KLI.Value;
+
                     kli = new Model.Klijent();
                     kli.IME_KLI = item.IME_KLI;
                     kli.PRZ_KLI = item.PRZ_KLI;
                     kli.JMBG_KLI = item.JMBG_KLI;
-                    kli.PLT_KLI = (int)item.PLT_KLI;
+                    kli.PLT_KLI = v2;
                     kli.ZirantID_ZIR= item.ZirantID_ZIR;
                     klijenti.Add(kli);
                 }
@@ -89,13 +95,13 @@ namespace WPF.ViewModel
 
         private void OnDelete()
         {
-            Klijenti.Remove(SelektovaniKlijent);
+            
             BankaBP2.Klijent k = new Klijent();
             k.IME_KLI = selektovaniKlijent.IME_KLI;
             k.JMBG_KLI = selektovaniKlijent.JMBG_KLI;
             k.PRZ_KLI = selektovaniKlijent.PRZ_KLI;
             kliOP.DeleteKli(k);
-            
+            Klijenti.Remove(SelektovaniKlijent);
         }
 
         public string FNText
@@ -147,7 +153,39 @@ namespace WPF.ViewModel
                 }
             }
         }
- 
+
+        private string fnTextUpdate;
+
+        public string FNTEXTUpdate
+        {
+            get { return fnTextUpdate; }
+            set { fnTextUpdate = value; }
+        }
+        private string lntextUpdate;
+
+        public string LNTextUpdate
+        {
+            get { return lntextUpdate; }
+            set { lntextUpdate = value; }
+        }
+
+        private string pltTextUpdate;
+
+        public string PLTTextUpdate
+        {
+            get { return pltTextUpdate; }
+            set { pltTextUpdate = value; }
+        }
+
+        private string zirId;
+
+        public string ZIRTEXTUpdate
+        {
+            get { return zirId; }
+            set { zirId = value; }
+        }
+
+
         private void OnAdd()
         {
             Klijenti.Add(new Model.Klijent { IME_KLI = FNText, PRZ_KLI = LNText, PLT_KLI = Int32.Parse(PLTText), ZirantID_ZIR = Int32.Parse(ZIRTEXT)});

@@ -25,6 +25,7 @@ namespace BankaBP2
         public string PRZ_RAD { get; set; }
     
         public virtual Filijala Filijala { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<IzdatiKrediti> IzdatiKreditis { get; set; }
     }

@@ -9,7 +9,8 @@
              viewModel:ViewModelLocator.AutoHookedUpViewModel="True"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.Resources>
+ 
+        <UserControl.Resources>
         <DataTemplate DataType="{x:Type data:Klijent }">
             <StackPanel Orientation="Horizontal">
                 <TextBox Text="{Binding Path=IME_KLI, Mode=TwoWay}" Width="100"/>
@@ -27,9 +28,8 @@
                     Width="75"
                     Command="{Binding DeleteCommand}"/>
             
-            <ListBox ItemsSource="{Binding Klijenti}"
-                     SelectedItem="{Binding SelektovaniKlijent}"/>
-            
+            <ListBox ItemsSource="{Binding Klijenti}" SelectedItem="{Binding SelektovaniKlijent}"/>
+
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal">
                     <Label>First Name:</Label>
@@ -41,27 +41,13 @@
                     <Label>Zirant ID:</Label>
                     <TextBox Text="{Binding ZIRTEXT}" Width="70"/>
                 </StackPanel>
-                
-                
+
+
                 <Button Content="Add"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Width="75"
                     Command="{Binding AddCommand}"/>
-            </StackPanel>
-            
-            <StackPanel x:Name="Update" Orientation="Vertical">
-                <StackPanel Orientation="Horizontal">
-                    <Label>First Name:</Label>
-                    <TextBox Text="{Binding FNText}" Width="70"/>
-                    <Label>Last Name:</Label>
-                    <TextBox Text="{Binding LNText}" Width="70"/>
-                    <Label>Pay :</Label>
-                    <TextBox Text="{Binding PLTText}" Width="70"/>
-                    <Label>Zirant ID:</Label>
-                    <TextBox Text="{Binding ZIRTEXT}" Width="70"/>
-                </StackPanel>
-
 
                 <Button Content="Update"
                     HorizontalAlignment="Left"
@@ -70,6 +56,9 @@
                     Command="{Binding UpdateCommand}"/>
             </StackPanel>
         </StackPanel>
+            
+          
+
         
     </Grid>
 </UserControl>

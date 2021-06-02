@@ -25,8 +25,6 @@ X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\WPF.csproj.CopyComplete
 X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\WPF.csprojAssemblyReference.cache
 X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\FilijalaWindow.g.cs
 X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\FilijalaWindow.baml
-X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\Sluzbenik.g.cs
-X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\Sluzbenik.baml
 X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\KlijentView.g.cs
 X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
 X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\KlijentView.baml
@@ -34,3 +32,11 @@ X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\KlijentiWindow.g.cs
 X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\KlijentiWindow.baml
 X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\HomeView.g.cs
 X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\HomeView.baml
+X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\ZirantView.g.cs
+X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\ZirantView.baml
+X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\SluzbenikView.g.cs
+X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\SluzbenikView.baml
+X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\RiskView.g.cs
+X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\RiskView.baml
+X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\OdlukaView.g.cs
+X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\OdlukaView.baml
