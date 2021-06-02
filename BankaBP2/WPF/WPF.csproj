@@ -63,18 +63,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\IzdatiKrediti.cs" />
     <Compile Include="Model\Klijent.cs" />
     <Compile Include="Model\Odluka.cs" />
+    <Compile Include="Model\Odobrenje.cs" />
     <Compile Include="Model\Risk.cs" />
     <Compile Include="Model\Sluzbenik.cs" />
     <Compile Include="Model\Zirant.cs" />
     <Compile Include="ViewModel\BankaViewModel.cs" />
     <Compile Include="ViewModel\BindableBase.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="ViewModel\IzdatiKreditiViewModel.cs" />
     <Compile Include="ViewModel\KlijentiWindowViewModel.cs" />
     <Compile Include="ViewModel\KlijentViewModel.cs" />
     <Compile Include="ViewModel\MyICommand.cs" />
     <Compile Include="ViewModel\OdlukaViewModel.cs" />
+    <Compile Include="ViewModel\OdobrenjeViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\RiskViewModel.cs" />
     <Compile Include="ViewModel\SluzbenikViewModel.cs" />
@@ -89,6 +93,9 @@
     <Compile Include="View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\IzdatiKreditiView.xaml.cs">
+      <DependentUpon>IzdatiKreditiView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\KlijentiWindow.xaml.cs">
       <DependentUpon>KlijentiWindow.xaml</DependentUpon>
     </Compile>
@@ -97,6 +104,9 @@
     </Compile>
     <Compile Include="View\OdlukaView.xaml.cs">
       <DependentUpon>OdlukaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OdobrenjeView.xaml.cs">
+      <DependentUpon>OdobrenjeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RiskView.xaml.cs">
       <DependentUpon>RiskView.xaml</DependentUpon>
@@ -131,6 +141,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\IzdatiKreditiView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\KlijentiWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -140,6 +154,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\OdlukaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OdobrenjeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

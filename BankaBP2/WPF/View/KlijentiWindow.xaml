@@ -32,6 +32,12 @@
         <DataTemplate DataType="{x:Type viewModel:OdlukaViewModel}">
             <views:OdlukaView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:OdobrenjeViewModel}">
+            <views:OdobrenjeView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:IzdatiKreditiViewModel}">
+            <views:IzdatiKreditiView/>
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -54,6 +60,10 @@
                           CommandParameter="risk"/>
                 <MenuItem Header="Lista odluka" Command="{Binding NavCommand}"
                           CommandParameter="odluka"/>
+                <MenuItem Header="Lista odobrenja" Command="{Binding NavCommand}"
+                          CommandParameter="odobrenje"/>
+                <MenuItem Header="Lista izdatih kredita" Command="{Binding NavCommand}"
+                          CommandParameter="izdati"/>
             </Menu>
         </DockPanel>
         <Grid Grid.Row="1">

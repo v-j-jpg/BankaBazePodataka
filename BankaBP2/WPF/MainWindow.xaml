@@ -20,8 +20,8 @@
         <DockPanel x:Name="Meni" Margin="0,0,0,374" />
         <Button x:Name="Banka" Content="Banka" HorizontalAlignment="Left" Click="Button_Click" VerticalAlignment="Top" Width="75" Height="25"/>
         <Button x:Name="Filijale" Content="Filijale" HorizontalAlignment="Left" Click="Button_Click_1" VerticalAlignment="Top" Width="75" Height="25" Margin="79,0,0,0"/>
-        <Button x:Name="Sluzbenici" Content="Sluzbenici" HorizontalAlignment="Left" Click="Sluzbenici_Click" VerticalAlignment="Top" Width="75" Height="25" Margin="159,0,0,0"/>
-        <Button x:Name="Klijenti" Content="Klijenti" HorizontalAlignment="Left" Click="Klijenti_Click"  VerticalAlignment="Top" Width="75" Height="25" Margin="239,0,0,0"/>
+
+        <Button x:Name="Pokreni" Content="Pokreni dan" HorizontalAlignment="Left" Click="Klijenti_Click"  VerticalAlignment="Top" Width="75" Height="25" Margin="239,0,0,0"/>
 
     </Grid>
   

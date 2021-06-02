@@ -62,8 +62,10 @@
     <Compile Include="Class1.cs" />
     <Compile Include="CRUD\Banka_OP.cs" />
     <Compile Include="CRUD\Filijala_OP.cs" />
+    <Compile Include="CRUD\Izdati_krediti_OP.cs" />
     <Compile Include="CRUD\Klijent_OP.cs" />
     <Compile Include="CRUD\Odluka_OP.cs" />
+    <Compile Include="CRUD\Odobrenje_OP.cs" />
     <Compile Include="CRUD\RISK_OP.cs" />
     <Compile Include="CRUD\Sluzbenik_OP.cs" />
     <Compile Include="CRUD\Zirant_OP.cs" />

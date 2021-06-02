@@ -40,3 +40,7 @@ X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\RiskView.g.cs
 X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\RiskView.baml
 X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\OdlukaView.g.cs
 X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\OdlukaView.baml
+X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\OdobrenjeView.g.cs
+X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\OdobrenjeView.baml
+X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\IzdatiKreditiView.g.cs
+X:\BankaBazaPodataka\BankaBP2\WPF\obj\Debug\View\IzdatiKreditiView.baml

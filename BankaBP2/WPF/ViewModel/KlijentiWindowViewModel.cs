@@ -16,6 +16,8 @@ namespace WPF.ViewModel
         private SluzbenikViewModel sluzbenikViewModel = new SluzbenikViewModel();
         private RiskViewModel riskViewModel = new RiskViewModel();
         private OdlukaViewModel odlukaViewModel = new OdlukaViewModel();
+        private OdobrenjeViewModel odobrenjeViewModel = new OdobrenjeViewModel();
+        private IzdatiKreditiViewModel IzdatiKreditiViewModel = new IzdatiKreditiViewModel();
 
         public KlijentiWindowViewModel()
         {
@@ -61,6 +63,14 @@ namespace WPF.ViewModel
 
                 case "risk":
                     CurrentViewModel = riskViewModel;
+                    break;
+
+                case "odobrenje":
+                    CurrentViewModel = odobrenjeViewModel;
+                    break;
+
+                case "izdati":
+                    CurrentViewModel = IzdatiKreditiViewModel;
                     break;
             }
 
