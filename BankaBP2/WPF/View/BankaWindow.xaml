@@ -28,5 +28,20 @@
         <Button Content="Update" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="80,90,0,0" Name="btnUpdate"   
                 VerticalAlignment="Top" Width="141"  
                 Command="{Binding Path=UpdateCommad}"  />
+        
+        <Button Content="Delete" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="82,136,0,0" Name="btnDelete"   
+                VerticalAlignment="Top" Width="141"  
+                Command="{Binding Path=DeleteCommand}"  />
+
+        <TextBox Grid.Row="1" Height="23" HorizontalAlignment="Left"  Name="NoviNaziv" VerticalAlignment="Top" Width="178" 
+                 Text="{Binding ElementName=Banka.NoviNaziv,Path=NoviNaziv}" Margin="370,40,0,0" 
+                 />
+        <Label Content="New Bank-->Enter Name:" Grid.Row="1" HorizontalAlignment="Left" Name="labelNaz" Margin="370,17,0,336" Width="178" />
+
+        <Button Content="Submit" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="373,82,0,0" Name="btnSubmit"   
+                VerticalAlignment="Top" Width="173"  
+                RenderTransformOrigin="0.26,-0.478" Click="btnSubmit_Click"  />
+
+
     </Grid>
 </Window>

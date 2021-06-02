@@ -35,7 +35,20 @@ namespace WPF
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            WPF.View.FilijalaWindow window = new View.FilijalaWindow();
+            window.ShowDialog();
+        }
 
+        private void Sluzbenici_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Klijenti_Click(object sender, RoutedEventArgs e)
+        {
+           View.KlijentiWindow win = new View.KlijentiWindow();
+            win.ShowDialog();
+         
         }
     }
 }

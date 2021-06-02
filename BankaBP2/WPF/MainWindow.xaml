@@ -3,14 +3,26 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPF"
+         xmlns:local="clr-namespace:WPF.View"
+          xmlns:vml="clr-namespace:WPF.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:KlijentView/>
+    </Window.DataContext>
+    <Window.Resources>
+
+        <DataTemplate DataType="{x:Type vml:KlijentViewModel}" >
+        </DataTemplate>
+    </Window.Resources>
+    
     <Grid>
         <DockPanel x:Name="Meni" Margin="0,0,0,374" />
         <Button x:Name="Banka" Content="Banka" HorizontalAlignment="Left" Click="Button_Click" VerticalAlignment="Top" Width="75" Height="25"/>
         <Button x:Name="Filijale" Content="Filijale" HorizontalAlignment="Left" Click="Button_Click_1" VerticalAlignment="Top" Width="75" Height="25" Margin="79,0,0,0"/>
-
+        <Button x:Name="Sluzbenici" Content="Sluzbenici" HorizontalAlignment="Left" Click="Sluzbenici_Click" VerticalAlignment="Top" Width="75" Height="25" Margin="159,0,0,0"/>
+        <Button x:Name="Klijenti" Content="Klijenti" HorizontalAlignment="Left" Click="Klijenti_Click"  VerticalAlignment="Top" Width="75" Height="25" Margin="239,0,0,0"/>
 
     </Grid>
+  
 </Window>

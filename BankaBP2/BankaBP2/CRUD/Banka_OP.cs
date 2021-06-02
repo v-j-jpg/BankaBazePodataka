@@ -17,15 +17,19 @@ namespace BankaBP2.CRUD
         //CRUD
         public void AddBank(string ime)
         {
-            using (var db = new Model1Container())
+            if (ime!=null)
             {
-                var banka = new BankaBP2.Banka
+                using (var db = new Model1Container())
                 {
-                    Naziv = ime
-                };
-                db.Bankas.Add(banka);
-                db.SaveChanges();
+                    var banka = new BankaBP2.Banka
+                    {
+                        Naziv = ime
+                    };
+                    db.Bankas.Add(banka);
+                    db.SaveChanges();
+                }
             }
+     
         }
         //Read
         public List<Banka_OP> ReadBank()
@@ -44,7 +48,34 @@ namespace BankaBP2.CRUD
                 }
             }
             return list;
-        } 
+        }
+        //Read
+        public IEnumerable<Banka> ReadBanks()
+        {
+            try
+            {
+                IEnumerable<Banka> banka;
+
+                using (var db = new Model1Container())
+                {
+                    banka = db.Bankas.Select(x => x);
+
+                    if (banka.Any())
+                    {
+                        banka = banka.Select(x => x).ToList();
+                    }
+                    
+                }
+
+                return banka;
+            }
+            catch
+            {
+                return null;
+            }
+
+
+        }
         //Update
         public void UpdateBank(string ime,int ID)
         {
@@ -62,19 +93,42 @@ namespace BankaBP2.CRUD
             }
         }
         //Delete
-        public void DeleteBank(string ime)
+        public void DeleteBank(int id)
         {
+            Banka b = new Banka();
 
             using (var db = new Model1Container())
             {
-                var banka = db.Bankas.SingleOrDefault(n => n.Naziv == ime);
+                var banka = db.Bankas.SingleOrDefault(n => n.ID_Banka == id);
+                var filijala = db.Filijalas.SingleOrDefault(a => a.BankaID_Banka == id);
+
 
                 if (banka != null)
                 {
+
                     db.Bankas.Remove(banka);
+
+                    if (filijala != null)
+                    {
+                        db.Filijalas.Remove(filijala);
+                        var sluzbenik = db.Sluzbeniks.SingleOrDefault(s => s.Filijala.ID_FIL == filijala.ID_FIL);
+
+                        if (sluzbenik != null)
+                        {
+                            var izdati_kr = db.IzdatiKreditis.SingleOrDefault(s => s.SluzbenikJMBG_RAD == sluzbenik.JMBG_RAD);
+                            db.Sluzbeniks.Remove(sluzbenik);
+
+                            if (izdati_kr != null)
+                            {
+                                db.IzdatiKreditis.Remove(izdati_kr);
+                            }
+                        }
+                    }
                 }
                 db.SaveChanges();
+
             }
         }
-    }
+  }
 }
+

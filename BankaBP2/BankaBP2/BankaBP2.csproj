@@ -62,6 +62,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="CRUD\Banka_OP.cs" />
     <Compile Include="CRUD\Filijala_OP.cs" />
+    <Compile Include="CRUD\Klijent_OP.cs" />
     <Compile Include="Filijala.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

@@ -23,5 +23,18 @@ namespace WPF.View
         {
             InitializeComponent();
         }
+
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+            BankaBP2.CRUD.Banka_OP banka_OP = new BankaBP2.CRUD.Banka_OP();
+            banka_OP.AddBank(NoviNaziv.Text);
+
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            BankaBP2.CRUD.Banka_OP banka_OP = new BankaBP2.CRUD.Banka_OP();
+            banka_OP.DeleteBank(Int32.Parse(txtID.Text));
+        }
     }
 }

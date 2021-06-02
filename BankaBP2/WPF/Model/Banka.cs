@@ -37,7 +37,19 @@ namespace WPF.Model
                 banka_OP.UpdateBank(value, ID);
             }
         }
+        private string noviNaziv;
 
+        public string NoviNaziv
+        {
+            get { return noviNaziv; }
+            set
+            {
+                noviNaziv = value;
+                OnPropertyAdded("NoviNaziv");
+
+              
+            }
+        }
 
 
         #region INotifyPropertyChanged Members  
@@ -48,6 +60,17 @@ namespace WPF.Model
             if (PropertyChanged != null)
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        public event PropertyChangedEventHandler propertyAdded;
+        private void OnPropertyAdded(string propertyName)
+        {
+            if (propertyAdded != null)
+            {  //Add
+                BankaBP2.CRUD.Banka_OP banka_OP = new BankaBP2.CRUD.Banka_OP();
+                banka_OP.AddBank(propertyName);
+                propertyAdded(this, new PropertyChangedEventArgs(propertyName));
             }
         }
         #endregion

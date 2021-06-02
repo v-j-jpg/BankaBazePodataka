@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using WPF.Model;
 using WPF.View;
@@ -13,10 +14,10 @@ namespace WPF.ViewModel
     public class BankaViewModel
     {    
         private IList<Model.Banka> banke_lista;
-
+        Model.Banka banka;
         public BankaViewModel()
         {
-            Model.Banka banka;
+           
             banke_lista = new List<Model.Banka>();
 
             //Read
@@ -81,6 +82,51 @@ namespace WPF.ViewModel
             }
 
             #endregion
+        }
+
+        private ICommand _SubmitCommand;
+        public ICommand SubmitCommand
+        {
+            get
+            {
+                if (_SubmitCommand == null)
+                {
+                    _SubmitCommand = new RelayCommand(param => this.Submit(),null);
+                }
+                return _SubmitCommand;
+            }
+        }
+
+        private void Submit()
+        {
+            ////ADD
+            //BankaBP2.CRUD.Banka_OP banka_OP = new BankaBP2.CRUD.Banka_OP();
+            //banka_OP.AddBank(banka.NoviNaziv);
+
+            //MessageBox.Show("jej");
+        }
+
+        private ICommand _DeleteCommand;
+        public ICommand DeleteCommand
+        {
+            get
+            {
+                if (_DeleteCommand == null)
+                {
+                    _DeleteCommand = new RelayCommand(param => this.Delete(), null);
+                }
+                return _DeleteCommand;
+            }
+        }
+
+        private void Delete()
+        {
+
+            ////UPDATE
+            //BankaBP2.CRUD.Banka_OP banka_OP = new BankaBP2.CRUD.Banka_OP();
+            //banka_OP.DeleteBank(banka.ID);
+            MessageBox.Show("Bank is deleted!");
+
         }
     }
 }
